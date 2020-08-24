@@ -5,11 +5,15 @@
 \title{Function for getting answer options for the question
 todo: documentation}
 \usage{
-lsGetAnswerOptions(surveyID, questionID, lsAPIurl = getOption("lsAPIurl"),
-  sessionKey = NULL, usageStats = getOption("LimeRickStats"))
+lsGetAnswerOptions(
+  surveyID,
+  questionID,
+  lsAPIurl = getOption("lsAPIurl"),
+  sessionKey = NULL,
+  usageStats = getOption("LimeRickStats")
+)
 }
 \description{
 Function for getting answer options for the question
 todo: documentation
 }
-

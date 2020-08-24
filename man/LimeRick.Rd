@@ -3,10 +3,11 @@
 \docType{package}
 \name{LimeRick}
 \alias{LimeRick}
-\alias{LimeRick-package}
 \alias{lsSessionCache}
 \title{Bridge between LimeSurvey and R}
-\format{An object of class \code{environment} of length 1.}
+\format{
+An object of class \code{environment} of length 1.
+}
 \usage{
 lsSessionCache
 }
@@ -37,4 +38,3 @@ feel free to contat me via my homepage contact form:
 }
 }
 \keyword{datasets}
-

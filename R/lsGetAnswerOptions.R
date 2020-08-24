@@ -8,6 +8,7 @@
 
 lsGetAnswerOptions = function(surveyID,
                               questionID,
+                              languageCode = "en",
                               lsAPIurl = getOption("lsAPIurl"),
                               sessionKey = NULL,
                               usageStats = getOption("LimeRickStats")
@@ -28,7 +29,7 @@ lsGetAnswerOptions = function(surveyID,
     if (missing(surveyID))
         stop("Need to specify questionID.")
 
-    properties = lsGetProperties('question', surveyID, questionID)
+    properties = lsGetProperties('question', surveyID, questionID, languageCode)
 
     answerOptionsList = properties$answeroptions
 

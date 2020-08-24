@@ -5,12 +5,15 @@
 \title{Function for listing surveys, groups or questions
 todo: documentation}
 \usage{
-lsList(action = "surveys", surveyID = NULL,
-  lsAPIurl = getOption("lsAPIurl"), sessionKey = NULL,
-  usageStats = getOption("LimeRickStats"))
+lsList(
+  action = "surveys",
+  surveyID = NULL,
+  lsAPIurl = getOption("lsAPIurl"),
+  sessionKey = NULL,
+  usageStats = getOption("LimeRickStats")
+)
 }
 \description{
 Function for listing surveys, groups or questions
 todo: documentation
 }
-

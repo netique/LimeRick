@@ -5,11 +5,15 @@
 \title{Function for adding new feedback for the package
 todo: documentation}
 \usage{
-lsAddFeedback(feedback, sector, country, packageName = "LimeRick",
-  usageStats = getOption("LimeRickStats"))
+lsAddFeedback(
+  feedback,
+  sector,
+  country,
+  packageName = "LimeRick",
+  usageStats = getOption("LimeRickStats")
+)
 }
 \description{
 Function for adding new feedback for the package
 todo: documentation
 }
-

@@ -11,4 +11,3 @@ lsAPI(method, params = NULL, lsAPIurl = getOption("lsAPIurl"))
 Function directly calling the LimeSurvey API
 todo: documentation
 }
-

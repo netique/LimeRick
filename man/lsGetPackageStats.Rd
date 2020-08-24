@@ -5,11 +5,12 @@
 \title{Function for getting stats of using package functions
 todo: documentation}
 \usage{
-lsGetPackageStats(packageName = "LimeRick",
-  usageStats = getOption("LimeRickStats"))
+lsGetPackageStats(
+  packageName = "LimeRick",
+  usageStats = getOption("LimeRickStats")
+)
 }
 \description{
 Function for getting stats of using package functions
 todo: documentation
 }
-

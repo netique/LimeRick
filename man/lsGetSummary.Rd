@@ -5,11 +5,14 @@
 \title{Function for getting survey summary
 todo: documentation}
 \usage{
-lsGetSummary(surveyID, lsAPIurl = getOption("lsAPIurl"), sessionKey = NULL,
-  usageStats = getOption("LimeRickStats"))
+lsGetSummary(
+  surveyID,
+  lsAPIurl = getOption("lsAPIurl"),
+  sessionKey = NULL,
+  usageStats = getOption("LimeRickStats")
+)
 }
 \description{
 Function for getting survey summary
 todo: documentation
 }
-

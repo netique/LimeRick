@@ -5,11 +5,15 @@
 \title{Function for adding new responses to the survey
 todo: documentation}
 \usage{
-lsAddResponse(surveyID, response, lsAPIurl = getOption("lsAPIurl"),
-  sessionKey = NULL, usageStats = getOption("LimeRickStats"))
+lsAddResponse(
+  surveyID,
+  response,
+  lsAPIurl = getOption("lsAPIurl"),
+  sessionKey = NULL,
+  usageStats = getOption("LimeRickStats")
+)
 }
 \description{
 Function for adding new responses to the survey
 todo: documentation
 }
-
