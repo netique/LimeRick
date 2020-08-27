@@ -30,6 +30,7 @@ lsGetResponses <- function(surveyID,
                            headingType = "code",
                            responseType = "long",
                            csv_type = "csv2",
+                           rfile = "rsyntax.R",
                            fromResponseID = NULL,
                            toResponseID = NULL,
                            fields = NULL,
@@ -72,7 +73,6 @@ lsGetResponses <- function(surveyID,
     sLanguageCode = languageCode,
     sCompletionStatus = completionStatus,
     sHeadingType = headingType,
-    sResponseType = responseType
 
     # todo: there is a problem with API with setting this params
     # to NULL: Error: Argument 'txt' must be a JSON string, URL or
@@ -91,30 +91,24 @@ lsGetResponses <- function(surveyID,
     lsAPIurl = lsAPIurl
   )
 
-  # decoding data from base64 format
-  data <- rawToChar(base64enc::base64decode(data))
+  if (documentType != "rsyntax") {
+    # decoding data from base64 format
+    data <- rawToChar(jsonlite::base64_dec(data))
 
-  # importing data from CSV format into data frame
-  df <- switch(csv_type,
-    "csv2" = read.csv2(textConnection(data),
-      encoding = "UTF-8",
-      stringsAsFactors = FALSE
-    ),
-    "csv" = read.csv(textConnection(data),
-      encoding = "UTF-8",
-      stringsAsFactors = FALSE
+    # importing data from CSV format into data frame
+    return(
+      switch(csv_type,
+        "csv2" = read.csv2(textConnection(data),
+          encoding = "UTF-8",
+          stringsAsFactors = FALSE
+        ),
+        "csv" = read.csv(textConnection(data),
+          encoding = "UTF-8",
+          stringsAsFactors = FALSE
+        )
+      )
     )
-  )
-
-  # monitoring usage of the function
-  lsAddPackageStats(
-    functionName = "lsGetResponses",
-    functionStats = NROW(df),
-    usageStats = usageStats
-  )
-
-
-
-  # returing data frame
-  df
+  } else {
+    return(jsonlite::base64_dec(data) %>% writeBin(con = rfile))
+  }
 }

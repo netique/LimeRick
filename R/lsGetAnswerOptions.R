@@ -33,8 +33,10 @@ lsGetAnswerOptions = function(surveyID,
 
     answerOptionsList = properties$answeroptions
 
-    if (!is.list(answerOptionsList))
-        stop("No available answer options for this specific question.")
+    if (!is.list(answerOptionsList)) {
+        return(NULL)
+    }
+        # stop("No available answer options for this specific question.")
 
     nAnswers = NROW(answerOptionsList)
     answerOptionsDF = data.frame(answerCode = character(nAnswers),
